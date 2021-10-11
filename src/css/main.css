@@ -1,0 +1,84 @@
+.pagination-warper, .title-warper{
+    margin-top: 20px;
+    margin-bottom:20px;
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+.row-of-table{
+}
+
+.link-path{
+    text-decoration: none;
+    color:black;
+}
+.maps-warper{
+    margin-bottom:15px;
+    height:55vh;
+    width:70%;
+    display:flex;
+    justify-content:center;
+}
+.bt-link{
+    color:white !important;
+    font-size: 18px;
+}
+.button-homePage:hover ,.bt-link:hover{
+    background-color: whitesmoke !important;
+    color:rgb(54, 69, 112) !important;
+    transition: all 0.3s;
+}
+
+.button-homePage {
+
+    background-color:rgb(54, 69, 112) !important;
+    width:270px !important;
+    height:40px;
+}
+
+.link-path{
+    font-weight: 500;
+    font-size: 16px;
+    color:rgb(54, 69, 112)
+}
+.link-path:hover{
+    color:rgb(37, 109, 204) !important;
+}
+.headers_table{
+    font-size: 20px !important;
+    color:white !important;
+}
+.title-warper{
+    background-color: rgb(225, 238, 255);
+    color:#3d517a !important;
+}
+.page-select{
+  font-size: 18px;
+}
+.table_cell, .details_cell{
+    height: 6vh;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    color:rgb(54, 69, 112) !important;
+}
+.table_cell:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    
+}
+
+
+/* responsive for mobiles */
+
+@media screen and (max-width: 500px) {
+    .link-path {
+        font-size: 12px;
+    }
+    .headers_table{
+        font-size: 14px !important; 
+    }
+    .table{
+        width:300px;
+    }
+  }
+  
