@@ -54,13 +54,13 @@ export default function Table_users({users}) {
                             <React.Fragment>
                        <TableCell className='table_cell'   
                         component="th" scope="row" align="center">
-                          <Link className='link-path'  to={{pathname:`/${item.name.first}`,search: `?page=${current_page}`}}>
+                          <Link className='link-path'  to={{hash:`${item.name.first}`,search: `?page=${current_page}`}}>
                            <Avatar src={item.picture.thumbnail}/>
                            </Link>
                         </TableCell>
                         <TableCell onClick={()=>changeTable(item)} className='table_cell'  
                         component="th" scope="row" align="center">
-                           <Link className='link-path'  to={{pathname:`/${item.name.first}`,search: `?page=${current_page}`}}>
+                           <Link className='link-path'  to={{hash:`${item.name.first}`,search: `?page=${current_page}`}}>
                              {item.name.first.charAt(0)} {item.name.last}
                         </Link> 
                         </TableCell>
@@ -69,12 +69,12 @@ export default function Table_users({users}) {
                           <a  className='link-path' style={{ textDecoration:'underline',color:'#1958b5'}} href={`mailto:${item.email}`}>{item.email}</a>
                           </TableCell>
                         <TableCell className='table_cell'  component="th" scope="row" align="center">
-                        <Link className='link-path'  to={{pathname:`/${item.name.first}`,search: `?page=${current_page}`}}>
+                        <Link className='link-path'  to={{hash:`${item.name.first}`,search: `?page=${current_page}`}}>
                           {item.gender}
                           </Link> 
                           </TableCell>
                         <TableCell className='table_cell'  component="th" scope="row" align="center">
-                        <Link className='link-path'  to={{pathname:`/${item.name.first}`,search: `?page=${current_page}`}}>
+                        <Link className='link-path'  to={{hash:`${item.name.first}`,search: `?page=${current_page}`}}>
                           {item.registered.age}
                           </Link>
                           </TableCell>

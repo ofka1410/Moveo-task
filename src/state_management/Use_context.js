@@ -18,7 +18,8 @@ const get_users= async()=>{
     
     setLoading(true)
     try{
-       if(window.location.pathname ==`/`){
+       if(window.location.hash.length ==0){
+
         setMapsOn(false)
         setTitle('All Users')
         const res= await fetch(`https://randomuser.me/api/?page=${current_page}&results=10&seed=abc`)
@@ -29,7 +30,7 @@ const get_users= async()=>{
         setUsers(data.results)
         setLoading(false)
       }
-       else{
+       else if(window.location.hash.length>1){
         user_details()
        }
         
@@ -44,7 +45,8 @@ const get_users= async()=>{
             setLoading(true)
      
                 try{
-                    let name=window.location.pathname
+                    let name=window.location.hash
+                   
                     name= name.substring(1)
                     const res3= await fetch(`https://randomuser.me/api/${window.location.search}&results=10&seed=abc`)
                     const data3 = await res3.json()
