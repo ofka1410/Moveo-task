@@ -1,5 +1,5 @@
 import { useState,createContext } from "react";
-import {useLocation} from "react-router-dom";
+
 export const context = createContext()
 function ContextProvider(props){
      const [current_page,setCurrent_page]=useState(1)
@@ -7,7 +7,6 @@ function ContextProvider(props){
     const [mapsOn,setMapsOn]=useState(false)
     const [title,setTitle]=useState('All Users')
     const[loading,setLoading]=useState(false)
-    //const location = useLocation();
     const [sortDetails,setSortDetails]=useState({
         page:0,
         name:'',
