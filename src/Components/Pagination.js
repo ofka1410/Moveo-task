@@ -8,7 +8,7 @@ export default function  BasicPagination() {
     
     return(
         <Stack className='page-select' onChange={(e)=>{setCurrent_page(e.target.textContent)}}  spacing={2}>
-        <Pagination className='page-select' onChange={(e)=>{setCurrent_page(e.target.textContent)}} onClick={get_users}  count={10} />
+        <Pagination variant="outlined" className='page-select' onChange={(e)=>{setCurrent_page(e.target.textContent)}} onClick={get_users}  count={500} />
       
       </Stack>
     )

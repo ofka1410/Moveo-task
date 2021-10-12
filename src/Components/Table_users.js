@@ -28,7 +28,8 @@ export default function Table_users({users}) {
 
 
     return (
-     
+      <div>
+      
         <TableContainer style={{ boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}  component={Paper}>
         <Table className='table'  size="small" aria-label="a dense table">
           <TableHead>
@@ -117,6 +118,6 @@ export default function Table_users({users}) {
           </TableBody>
           </Table>
     </TableContainer>
-  
+    </div>
     )
 }
