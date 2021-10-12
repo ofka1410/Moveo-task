@@ -11,6 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import {Link} from "react-router-dom";
 import {context} from '../state_management/Use_context';
 
+
 export default function Table_users({users}) {
     const { get_users,setCurrent_page,current_page,setSortDetails}= useContext(context)
 
@@ -27,6 +28,7 @@ export default function Table_users({users}) {
 
 
     return (
+     
         <TableContainer style={{ boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}  component={Paper}>
         <Table className='table'  size="small" aria-label="a dense table">
           <TableHead>
@@ -115,6 +117,6 @@ export default function Table_users({users}) {
           </TableBody>
           </Table>
     </TableContainer>
-    
+  
     )
 }

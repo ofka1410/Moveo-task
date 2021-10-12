@@ -9,6 +9,8 @@ import GoogleMaps from './GoogleMaps';
 import {Link} from "react-router-dom";
 import ProgresBar from './ProgresBar';
 import '../css/main.css'
+import {
+  BrowserRouter as Router} from "react-router-dom";
 export default function Main() {
     const { get_users,users,current_page,title,mapsOn,setMapsOn,loading,setLoading}= useContext(context)
     
@@ -17,6 +19,7 @@ export default function Main() {
       },[current_page]);
     
     return(
+       <Router>
         <Container>
           {loading?
           <ProgresBar/>
@@ -50,8 +53,7 @@ export default function Main() {
                 :<BasicPagination/> }
                
             </div>
-
-           
         </Container>
+        </Router>
     )
 }

@@ -42,38 +42,7 @@ const get_users= async()=>{
      
         const user_details=async()=>{
             setLoading(true)
-            if(sortDetails.page){
-                try{
-                    const res2= await fetch(`https://randomuser.me/api/?page=${sortDetails.page}&results=10&seed=abc`)
-                    const data2 = await res2.json()
-                    console.log(sortDetails)
-                    const found = data2.results.find(el=>el.name.first === sortDetails.name && el.name.last === sortDetails.last)
-                    console.log(found)
-                    if(Object.keys(found).length !== 0){
-                        let arr=[]  
-                        arr.push(found)
-                        console.log(arr)
-                        setUsers([])
-                        setTitle('User Details')
-                       setUsers(arr)
-                      
-                        setMapsOn(true) 
-                        setLoading(false)
-                       
-                       
-                    }
-                    else{
-                        setLoading(false)
-                     return;
-                    }
-                  }
-                catch(err){
-               console.log(err)
-                }
-            }
-            else{
-              
-                
+     
                 try{
                     let name=window.location.pathname
                     name= name.substring(1)
@@ -87,7 +56,7 @@ const get_users= async()=>{
                         setUsers([])
                         setTitle('User Details')
                        setUsers(arr)
-                       
+                     
                        setMapsOn(true) 
                        setLoading(false)
                     }
@@ -99,9 +68,7 @@ const get_users= async()=>{
                 catch(err){
                     console.log(err)
                 }
-             
-            }
-          
+            
        }
 
 

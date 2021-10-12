@@ -4,19 +4,13 @@ import GoogleMapReact from 'google-map-react';
 import RoomIcon from '@mui/icons-material/Room';
 import { env } from 'process';
 require('dotenv').config()
-const AnyReactComponent = ({ text }) => <div><RoomIcon style={{color:'red'}}/></div>;
+const AnyReactComponent = ({ text }) => <div><RoomIcon style={{color:'red',zIndex:'1000'}}/></div>;
 
 
 export default function GoogleMaps() {
       
     const {users}= useContext(context)
-    let Props = {
-      center: {
-        lat: 59.95,
-        lng: 30.33
-      },
-      zoom: 11
-    };
+    
    
      const [viewport, setViewport] = React.useState({
       latitude:0,
@@ -24,17 +18,16 @@ export default function GoogleMaps() {
 
      });
   useEffect(() => {
-    console.log(users)
+    
     if(users.length>0){
     setViewport(
       {
-        latitude: users[0].location.coordinates.latitude,
-        longitude: users[0].location.coordinates.longitude,
-        zoom: 8
+        lat: parseInt(users[0].location.coordinates.latitude),
+        lng: parseInt(users[0].location.coordinates.longitude),
+       
       }
     )
-    Props.center.lat=users[0].location.coordinates.latitude
-    Props.center.lng= users[0].location.coordinates.longitude
+ 
   }
   },[]);
 
@@ -45,8 +38,8 @@ export default function GoogleMaps() {
       <div className='maps-warper'>
         <GoogleMapReact
           bootstrapURLKeys={{ key:env.REACT_APP_API_KEY}}
-          defaultCenter={Props.center}
-          defaultZoom={Props.zoom}
+          defaultCenter={viewport}
+          defaultZoom={6}
         >
           <AnyReactComponent
             lat={viewport.latitude}
